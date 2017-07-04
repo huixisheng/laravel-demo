@@ -11,5 +11,12 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+// mix.js('resources/assets/js/app.js', 'public/js')
+   // .sass('resources/assets/sass/app.scss', 'public/css');
+
+if (process.env.Project === 'project1') {
+  require('./assets/project1/build/webpack.config.mix')(mix, 'URL_LARAVEL');
+}
+
+// const arr = require.context('./', true, /\.mix\.js$/);
+

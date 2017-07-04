@@ -91,6 +91,10 @@
                 </div>
             </div>
         </div>
-        <script src="{{ mix('/js/app.js') }}"></script>
+        <div id="app"></div>
+        @if (getenv('APP_ENV') === 'local')
+            <script id="__bs_script__" src="http://127.0.0.1:3000/browser-sync/browser-sync-client.js?v=2.18.6"></script>
+        @endif
+        <script src="{{ mix('/main.js', '/dist/project1') }}"></script>
     </body>
 </html>
